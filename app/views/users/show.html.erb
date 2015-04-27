@@ -1,5 +1,14 @@
+<h1 class='header'>FiendFeed | <%= @user.name %></h1>
+
+<%= form_tag "/users/#{@user.id}/follow", method: "post" do %>
+  <%= submit_tag "Follow", class: 'button' %>
+<% end %>
+
 <% @feed.each do |post| %>
-  <div>
-    <%= post.body %>
+  <div class='post'>
+    <p class='body'>
+      <%= post.body %>
+    </p>
+    <p class='author'>Posted by <%= link_to post.user.name, user_path(post.user) %> on <%= post.created_at.strftime('%B %e at %l:%M %p') %></p>
   </div>
 <% end %>

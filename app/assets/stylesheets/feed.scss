@@ -1,3 +1,81 @@
 // Place all the styles related to the Feed controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post {
+  border-bottom: 1px solid #444;
+  padding: 10px 20px;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .body {
+    font-size: 20px;
+    padding-bottom: 3px;
+  }
+  .author {
+    color: #888;
+    font-size: 12px;
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed #888;
+    }
+    a:hover {
+      background-color: #f3f3f3;
+      color: #222;
+      border-bottom: 1px solid #222;
+    }
+  }
+}
+.post:last-child {
+  border-bottom: none;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  line-height: 20px;
+  font-size: 20px;
+  min-height: 45px;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #888;
+}
+
+.button {
+  margin: 10px 0;
+  padding: 0;
+  height: 30px;
+  line-height: 28px;
+  font-size: 14px;
+  color: #222;
+  width: 100%;
+  display: block;
+  float: right;
+  text-transform: uppercase;
+  border: 1px solid #222;
+  background-color: white;
+  -webkit-box-shadow: inset 0 -2px #ddd;
+  box-shadow: inset 0 -2px #ddd;
+  outline: none;
+  cursor: pointer;
+  -moz-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:visited {
+  color: #222;
+}
+
+.button:hover {
+  background-color: #ffffea;
+}
+
+form:after {
+  content: "";
+  display: block;
+  clear: both;
+}

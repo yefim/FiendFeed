@@ -1,7 +1,21 @@
-<%= link_to 'My Profile', user_path(current_user) %>
+<h1 class='header'>FiendFeed | Your Feed</h1>
 
 <%= form_for @post do |p| %>
-  <%= p.label :body %>: 
-  <%= p.text_field :body %>
-  <%= p.submit %>
+  <%= p.text_area :body, placeholder: "What would you like to tell your enemies?", class: 'input' %>
+  <%= p.submit 'Post', class: 'button' %>
+<% end %>
+
+<div>
+  <% @feed.each do |post| %>
+    <div class='post'>
+      <p class='body'>
+        <%= post.body %>
+      </p>
+      <p class='author'>Posted by <%= link_to post.user.name, user_path(post.user) %> on <%= post.created_at.strftime('%B %e at %l:%M %p') %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= form_tag '/signout', method: 'post' do %>
+  <%= submit_tag 'Log out', class: 'button' %>
 <% end %>

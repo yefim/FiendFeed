@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  match '/users/:id/follow', to: 'users#follow', via: [:post]
+
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:post]

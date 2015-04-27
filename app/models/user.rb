@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+  belongs_to :user
+  has_many :users
 end
