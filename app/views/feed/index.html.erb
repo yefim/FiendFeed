@@ -1,4 +1,7 @@
 <h1 class='header'>FiendFeed | Your Feed</h1>
+<h2 class='header'>
+  <%= link_to 'List of Users', users_index_path, class: 'link' %>
+</h2>
 
 <%= form_for @post do |p| %>
   <%= p.text_area :body, placeholder: "What would you like to tell your enemies?", class: 'input' %>

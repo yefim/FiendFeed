@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'users/show'
+  get 'users/index'
 
   resources :users
   resources :posts

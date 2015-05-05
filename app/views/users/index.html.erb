@@ -1,0 +1,9 @@
+<h1 class='header'>FiendFeed | List of Users</h1>
+
+<div class='users'>
+  <% @users.each do |user| %>
+    <div class='user'>
+      <%= link_to user.name, user_path(user), class: 'name' %> | <span class='post-count'><%= pluralize(user.posts.count, 'post') %></span>
+    </div>
+  <% end %>
+</div>
